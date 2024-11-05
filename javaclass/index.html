@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input  id="input" type="text" placeholder="search">
+    <table id="display">
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Department</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        
+    </table>
+    
+
+
+
+
+    
+    <script>
+        const employees = [
+    {
+        id: 1,
+        name: "Alice Johnson",
+        position: "Software Engineer",
+        department: "IT",
+        email: "alice.johnson@example.com",
+        phone: "555-0101"
+    },
+    {
+        id: 2,
+        name: "Bob Smith",
+        position: "Product Manager",
+        department: "Product",
+        email: "bob.smith@example.com",
+        phone: "555-0102"
+    },
+    {
+        id: 3,
+        name: "Charlie Brown",
+        position: "UX Designer",
+        department: "Design",
+        email: "charlie.brown@example.com",
+        phone: "555-0103"
+    },
+    {
+        id: 4,
+        name: "Diana Prince",
+        position: "Data Analyst",
+        department: "Analytics",
+        email: "diana.prince@example.com",
+        phone: "555-0104"
+    },
+    {
+        id: 5,
+        name: "Ethan Hunt",
+        position: "Marketing Specialist",
+        department: "Marketing",
+        email: "ethan.hunt@example.com",
+        phone: "555-0105"
+    },
+    {
+        id: 6,
+        name: "Fiona Gallagher",
+        position: "HR Manager",
+        department: "HR",
+        email: "fiona.gallagher@example.com",
+        phone: "555-0106"
+    },
+    {
+        id: 7,
+        name: "George Washington",
+        position: "Sales Executive",
+        department: "Sales",
+        email: "george.washington@example.com",
+        phone: "555-0107"
+    },
+    {
+        id: 8,
+        name: "Hannah Baker",
+        position: "Customer Support",
+        department: "Support",
+        email: "hannah.baker@example.com",
+        phone: "555-0108"
+    },
+    {
+        id: 9,
+        name: "Ian Malcolm",
+        position: "Web Developer",
+        department: "IT",
+        email: "ian.malcolm@example.com",
+        phone: "555-0109"
+    },
+    {
+        id: 10,
+        name: "Julia Roberts",
+        position: "Content Writer",
+        department: "Content",
+        email: "julia.roberts@example.com",
+        phone: "555-0110"
+    },
+    {
+        id: 11,
+        name: "Kevin Hart",
+        position: "Graphic Designer",
+        department: "Design",
+        email: "kevin.hart@example.com",
+        phone: "555-0111"
+    },
+    {
+        id: 12,
+        name: "Laura Croft",
+        position: "SEO Specialist",
+        department: "Marketing",
+        email: "laura.croft@example.com",
+        phone: "555-0112"
+    },
+    {
+        id: 13,
+        name: "Mark Twain",
+        position: "Operations Manager",
+        department: "Operations",
+        email: "mark.twain@example.com",
+        phone: "555-0113"
+    },
+    {
+        id: 14,
+        name: "Nina Simone",
+        position: "Finance Analyst",
+        department: "Finance",
+        email: "nina.simone@example.com",
+        phone: "555-0114"
+    },
+    {
+        id: 15,
+        name: "Oliver Twist",
+        position: "Business Analyst",
+        department: "Analytics",
+        email: "oliver.twist@example.com",
+        phone: "555-0115"
+    },
+    {
+        id: 16,
+        name: "Paula Patton",
+        position: "Project Coordinator",
+        department: "Project Management",
+        email: "paula.patton@example.com",
+        phone: "555-0116"
+    },
+    {
+        id: 17,
+        name: "Quentin Tarantino",
+        position: "Creative Director",
+        department: "Creative",
+        email: "quentin.tarantino@example.com",
+        phone: "555-0117"
+    },
+    {
+        id: 18,
+        name: "Rachel Green",
+        position: "Customer Success Manager",
+        department: "Support",
+        email: "rachel.green@example.com",
+        phone: "555-0118"
+    },
+    {
+        id: 19,
+        name: "Sam Winchester",
+        position: "Network Engineer",
+        department: "IT",
+        email: "sam.winchester@example.com",
+        phone: "555-0119"
+    }]
+
+    function getData(){
+        str=``
+        employees.map((element)=>{
+            str+=`<tr>
+            <td>${element.id}</td>
+            <td>${element.name}</td>
+            <td>${element.position}</td>
+            <td>${element.department}</td>
+            <td>${element.email}</td>
+            <td>${element.phone}</td>
+        </tr>`    
+        })
+
+        document.getElementById("display").innerHTML=str
+    }
+    
+    getData()
+
+      document.getElementById("input").addEventListener("keyup",(inputelement)=>{
+        filterdata=employees.filter((element)=>{
+            return element.name.toLowerCase().includes(inputelement.target.value.toLowerCase())
+        })
+        str=``
+        filterdata.map((element)=>{
+            str+=`<tr>
+            <td>${element.id}</td>
+            <td>${element.name}</td>
+            <td>${element.position}</td>
+            <td>${element.department}</td>
+            <td>${element.email}</td>
+            <td>${element.phone}</td>
+        </tr>`    
+        })
+
+        document.getElementById("display").innerHTML=str
+      })
+
+
+
+
+
+      
+    </script>
+
+</body>
+</html>
